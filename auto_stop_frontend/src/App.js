@@ -6,6 +6,7 @@ class App extends Component {
     make: '',
     type: '',
     model: '',
+    manufacturer_id: '',
     cars: [],
   }
 
@@ -40,7 +41,7 @@ class App extends Component {
     axios
       .get('/car')
       .then(
-      (response) => this.setState({ cars: response.data, make: '', type: '', model: '' }),
+      (response) => this.setState({ cars: response.data, make: '', type: '', model: '' , manufacturer_id: '' }),
       err => console.log(err)
     )
     .catch((error) => console.error(error))
@@ -77,6 +78,14 @@ class App extends Component {
                 id="model"
                 onChange={this.handleChange}
                 value={this.state.model}
+            />
+            <br />
+            <label htmlFor="manufacturer_id">Manufacturer</label>
+            <input
+                type="text"
+                id="manufacturer_id"
+                onChange={this.handleChange}
+                value={this.state.manufacturer_id}
             />
             <br />
             <input type="submit" value="ADD"/>
