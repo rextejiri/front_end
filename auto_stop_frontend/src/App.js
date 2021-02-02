@@ -120,6 +120,12 @@ class App extends Component {
                         onChange={this.handleChange}
                     />
                     <br />
+                    <label htmlFor="manufacturer_id">Manufacturer</label>
+                    <input
+                        type="text"
+                        id="manufacturer_id"
+                        onChange={this.handleChange}
+                    />
                     <input type="submit" value="UPDATE"/>
                   </form>
                 </details>
