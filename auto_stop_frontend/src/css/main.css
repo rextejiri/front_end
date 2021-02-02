@@ -1,0 +1,45 @@
+body {
+  background-color: azure;
+}
+
+#add {
+  font-family: times;
+}
+
+#display {
+  font-family: arial;
+  margin: 1em auto 1em 3em;
+  padding: 0.5em;
+  width: 75%;
+}
+#display h4 {
+  margin: auto auto -1em 0.5em;
+}
+
+details {
+  font-size: 0.8em;
+}
+
+#delete {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+#info {
+  display: flex;
+  flex-direction: row;
+}
+
+#info > label {
+  margin: auto 0.4em auto 5em;
+}
+
+#vehicleinfo {
+  margin: 2em auto 1em 4.5em;
+}
+
+#carimg {
+  width: 10em;
+}
+
+/*# sourceMappingURL=main.css.map */
