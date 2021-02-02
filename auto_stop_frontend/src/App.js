@@ -145,7 +145,7 @@ class App extends Component {
                     />
 
                     <br />
-                    <label htmlFor="prie">Price</label>
+                    <label htmlFor="price">Price</label>
                     <input
                         type="text"
                         id="price"
