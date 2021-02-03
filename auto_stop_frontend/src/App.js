@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import '../src/css/main.css'
 
 class App extends Component {
   state = {
@@ -7,6 +8,8 @@ class App extends Component {
     type: '',
     model: '',
     manufacturer_id: '',
+    price: '',
+    image: '',
     cars: [],
   }
 
@@ -53,9 +56,9 @@ class App extends Component {
 
   render = () => {
     return (
-      <div>
-        <h2>Add new Car</h2>
-          <form onSubmit={this.handleSubmit}>
+      <div id="add">
+        <h2 id="vehicleinfo">Vehicle Information</h2>
+          <form id="info" onSubmit={this.handleSubmit}>
             <label htmlFor="make">Make</label>
             <input
                 type="text"
@@ -63,7 +66,7 @@ class App extends Component {
                 onChange={this.handleChange}
                 value={this.state.make}
             />
-            <br />
+
             <label htmlFor="type">Type</label>
             <input
                 type="text"
@@ -71,7 +74,7 @@ class App extends Component {
                 onChange={this.handleChange}
                 value={this.state.type}
             />
-            <br />
+
             <label htmlFor="model">Model</label>
             <input
                 type="text"
@@ -79,39 +82,52 @@ class App extends Component {
                 onChange={this.handleChange}
                 value={this.state.model}
             />
-            <br />
-            <label htmlFor="manufacturer_id">Manufacturer</label>
+
+            <label htmlFor="price">Price</label>
+            <input
+                type="text"
+                id="price"
+                onChange={this.handleChange}
+                value={this.state.price}
+            />
+
+            <label htmlFor="image">Image</label>
+            <input
+                type="text"
+                id="image"
+                onChange={this.handleChange}
+                value={this.state.image}
+            />
+
+            <label htmlFor="manufacturer_id">Manufacturer ID</label>
             <input
                 type="text"
                 id="manufacturer_id"
                 onChange={this.handleChange}
                 value={this.state.manufacturer_id}
             />
-            <br />
+
             <input type="submit" value="ADD"/>
           </form>
         {this.state.cars.map((car) => {
           return (
-            <div>
-              <h4>Make: {car.make}</h4>
-              <h5>Type: {car.type}</h5>
-              <h5>Model: {car.model}</h5>
+            <div id="display">
+              <h4>{car.make}</h4>
+              <h5>{car.model}</h5>
+              <img id="carimg" src={car.image} alt="car" />
+              <h5>{car.price}</h5>
+              <h5>{car.type}</h5>
                 <details>
                   <summary>Edit</summary>
-                  <form id={car.id} onSubmit={this.updateCar}>
+                  <form class="edit" id={car.id} onSubmit={this.updateCar}>
+
                     <label htmlFor="make">Make</label>
                     <input
                         type="text"
                         id="make"
                         onChange={this.handleChange}
                     />
-                    <br />
-                    <label htmlFor="type">Type</label>
-                    <input
-                        type="text"
-                        id="type"
-                        onChange={this.handleChange}
-                    />
+
                     <br />
                     <label htmlFor="model">Model</label>
                     <input
@@ -119,6 +135,39 @@ class App extends Component {
                         id="model"
                         onChange={this.handleChange}
                     />
+
+                    <br />
+                    <label htmlFor="type">Type</label>
+                    <input
+                        type="text"
+                        id="type"
+                        onChange={this.handleChange}
+                    />
+
+                    <br />
+                    <label htmlFor="price">Price</label>
+                    <input
+                        type="text"
+                        id="price"
+                        onChange={this.handleChange}
+                    />
+
+                    <br />
+                    <label htmlFor="image">Image</label>
+                    <input
+                        type="text"
+                        id="image"
+                        onChange={this.handleChange}
+                    />
+
+                    <br />
+                    <label htmlFor="manufacturer_id">Manufacturer ID</label>
+                    <input
+                        type="text"
+                        id="manufacturer_id"
+                        onChange={this.handleChange}
+                    />
+
                     <br />
                     <label htmlFor="manufacturer_id">Manufacturer</label>
                     <input
@@ -129,9 +178,10 @@ class App extends Component {
                     <input type="submit" value="UPDATE"/>
                   </form>
                 </details>
-              <button value={car.id} onClick={this.deleteCar}>
-                  X
+              <button id="delete" value={car.id} onClick={this.deleteCar}>
+                X
               </button>
+              <hr />
             </div>
           )
         })}
