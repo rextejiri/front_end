@@ -158,7 +158,7 @@ class App extends Component {
                   <h5>{car.model}</h5>
                   <img id="carimg" src={car.image} alt="car" />
                   <h5>{car.mileage} miles</h5>
-                  <h5>{car.about}</h5>
+                  <p>{car.about}</p>
                   <h5>${car.price}</h5>
                   <h5>{car.type}</h5>
                     <details>
